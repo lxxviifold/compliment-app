@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Compliment Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        #compliment {
+            font-size: 24px;
+            color: #2c3e50;
+            margin: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Compliment Generator</h1>
+    <div id="compliment">Click the button for a compliment!</div>
+    <button onclick="generateCompliment()">Get Compliment</button>
+
+    <script>
+        const compliments = [
+            "You’re a genius and don’t even know it!",
+            "You have the charm of a thousand adorable puppies.",
+            "You’re so cool, ice cubes are jealous.",
+            "Your smile could power a small city.",
+            "You’re basically a superhero without the cape.",
+            "You make Mondays feel like Fridays.",
+            "You’re the human equivalent of a perfect Wi-Fi signal."
+        ];
+
+        function generateCompliment() {
+            const randomIndex = Math.floor(Math.random() * compliments.length);
+            const complimentText = compliments[randomIndex];
+            document.getElementById("compliment").innerText = complimentText;
+        }
+    </script>
+</body>
+</html>
